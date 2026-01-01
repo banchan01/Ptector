@@ -1,15 +1,12 @@
 # Anti-Phishing Chrome Extension
 
-A machine learning-powered Chrome extension that helps detect and prevent phishing attacks in real-time.
+A URL-based anti-phishing Chrome extension detects phishing websites in real time using ML.
 
 ## Features
 
 - Real-time URL analysis
 - Machine learning-based phishing detection
-- Page rank and Google index checking
-- Visual notifications for suspicious sites
 - Detailed analysis popup
-- MongoDB integration for tracking detected phishing sites
 
 ## Architecture
 
@@ -24,13 +21,10 @@ The project consists of three main components:
    - REST API for URL analysis
    - Integration with ML model
    - Page rank and Google index checking
-   - MongoDB database connection (Future improvements)
 
 3. **Machine Learning**
    - Random Forest classifier
    - Feature extraction
-   - Model training scripts
-   - Saved model files
 
 
 ## Installation
@@ -39,7 +33,7 @@ The project consists of three main components:
 - Run `cd flask-backend` to navigate to the backend directory.
 - Set-up python virtual environment `python3 -m venv venv`
 - Activate the virtual environment with `source venv/bin/activate` (Mac) or `myenv\Scripts\activate` (Windows)
-- Install dependencies with `pip install pandas numpy scikit-learn joblib matplotlib seaborn`
+- Install dependencies with `pip install -r requirements.txt`
 
 2. Set up environment variables:
 - Create `.env` file in flask-backend directory
@@ -62,7 +56,6 @@ The project consists of three main components:
 - Google API Key
     - Go to Google Cloud Console : https://console.cloud.google.com/
     - Create new project/Select existing project
-    - Enable billing
     - Go to "APIs & Services" > "Library"
     - Enable "Custom Search API"
     - Go to "Credentials"
@@ -82,7 +75,7 @@ The project consists of three main components:
 - Open Chrome extensions page
 - Enable Developer mode
 - Click "Load unpacked"
-- Select the chromeExtension directory
+- Select the /chromeExtension directory
 
 ## Usage
 1. Start the Flask backend:
@@ -94,5 +87,8 @@ The project consists of three main components:
 - Frontend: HTML, CSS, JavaScript
 - Backend: Flask, Python
 - ML: scikit-learn, NumPy, Pandas
-- Database: MongoDB
 - APIs: OpenPageRank, Google Search
+
+## Contritubter
+
+## License
