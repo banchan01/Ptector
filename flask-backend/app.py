@@ -1,13 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from flask_pymongo import PyMongo
 import joblib
 import numpy as np
 from dotenv import load_dotenv
 import os
 from controllers.page_rank_controller import get_page_rank
 from controllers.google_index_controller import get_google_index
-from controllers.database_controller import connect_to_database, add_phishing_link
 
 # Load environment variables
 load_dotenv()
@@ -88,12 +86,8 @@ def check_url():
         # Make prediction with ordered features
         feature_array = np.array([[features[name] for name in FEATURE_NAMES]], dtype=np.float32)
         prediction = model.predict_proba(feature_array)[0]
-        is_phishing = int(prediction[1] > 0.5)
-        
-        # Save to database if phishing
-        if is_phishing:
-            add_phishing_link(url, features, float(prediction[1]))
-        
+        is_phishing = int(prediction[1] > 0.7)
+                
         response_data = {
             'url': url,
             'features': features,
@@ -114,5 +108,4 @@ def check_url():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    connect_to_database()
-    app.run(port=3000, debug=True)
+    app.run(port=5000, debug=True)

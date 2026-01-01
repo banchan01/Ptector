@@ -11,7 +11,9 @@ def connect_to_database():
         return db
     except Exception as e:
         print(f'Database connection error: {str(e)}')
-        raise e
+        print('Running without MongoDB')
+        return None
+        # raise e
 
 def add_phishing_link(url, features, prediction):
     try:
