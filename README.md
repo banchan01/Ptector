@@ -1,6 +1,6 @@
 # Ptector
 
-Ptector is a URL-based anti-phishing Chrome extension developed as a **CS204 - interconnection of CPS course project at SMU**.
+Ptector is a URL-based anti-phishing Chrome extension developed as a **CS204 - interconnection of CPS course project at SMU**.<br>
 It detects phishing websites in real time using a ML model and provides immediate feedback through a browser extension.
 
 https://github.com/user-attachments/assets/cc699968-08d1-4491-9550-54d7f96a7190
