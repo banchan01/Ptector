@@ -1,6 +1,7 @@
 # Ptector
 
-A URL-based anti-phishing Chrome extension detects phishing websites in real time using ML.
+Ptector is a URL-based anti-phishing Chrome extension developed as a **CS204 - interconnection of CPS course project at SMU**.
+It detects phishing websites in real time using a ML model and provides immediate feedback through a browser extension.
 
 https://github.com/user-attachments/assets/cc699968-08d1-4491-9550-54d7f96a7190
 
@@ -40,8 +41,20 @@ The project consists of three main components:
    - Page rank and Google index checking
 
 3. **Machine Learning**
-   - Random Forest classifier
-   - Feature extraction
+  - **CNN (Raw URL-based)**
+    <img width="1359" height="602" alt="image" src="https://github.com/user-attachments/assets/672328f6-6489-4cb9-bb96-32d90e3fea25" />
+    Initially trained a CNN model directly on raw URL strings, achieving approximately **92% accuracy**.  
+    This approach captured character-level patterns but lacked interpretability and flexibility.
+  
+  - **DNN (Feature-based)**
+    <img width="1394" height="579" alt="image" src="https://github.com/user-attachments/assets/df43c93a-db1b-4004-a359-1102faccab50" />
+    Switched to a feature-based DNN after identifying the need for explicit learning of URL characteristics.  
+    This improved performance to approximately **95% accuracy** by leveraging structured URL features.
+  
+  - **Random Forest (Final Model)**
+    <img width="1000" height="600" alt="model-rf-5" src="https://github.com/user-attachments/assets/37c1094f-882b-4dce-b684-bcd0706a7ce2" />
+    Due to the limited dataset size and model complexity, a Random Forest model was selected as the final approach.  
+    Applied **feature importance-based feature selection**, achieving **94% accuracy** with significantly faster inference, making it more suitable for real-time browser usage.
 
 
 ## Installation
@@ -124,7 +137,7 @@ The project consists of three main components:
 ## License
 MIT License
 
-Copyright (c) 2026 banchan_01
+Copyright (c) 2024 banchan_01
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
