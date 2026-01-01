@@ -1,4 +1,4 @@
-# Anti-Phishing Chrome Extension
+# Ptector
 
 A URL-based anti-phishing Chrome extension detects phishing websites in real time using ML.
 
